@@ -1,4 +1,4 @@
-function injector(str){
+function VTOLinjector(str){
 	newStr = str;
 	newStr=newStr.replace('"v"){;}',VTOL);
 	newStr=newStr.replace('[S9L.C1E(107),S9L.W1E(1130),S9L.C1E(1131),S9L.W1E(1132),',VTOL_MODE);
@@ -22,7 +22,7 @@ if(!window.bonkCodeInjectors)
 window.bonkCodeInjectors = [];
 window.bonkCodeInjectors.push(bonkCode => {
 	try {
-		return injector(bonkCode);
+		return VTOLinjector(bonkCode);
 	} catch (error) {
 		alert(
 `Whoops! VTOL was unable to load.
