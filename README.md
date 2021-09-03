@@ -8,7 +8,7 @@ A browser extension to add VTOL back to bonk.io
 * Go to releases, and download the latest release (.zip)
 * Type `about:debugging#/runtime/this-firefox` to your browser's address bar
 * Click on Load Temporary Add-on
-* Select the vtol.zip
+* Select vtol.zip
 * Go to [bonk.io](https://bonk.io), and you should be good to go!
 ### Chromium
 Chromium, Chrome, Edge, Opera or any other Chromium-based browser
