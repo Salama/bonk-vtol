@@ -3,19 +3,16 @@ A browser extension to add VTOL back to bonk.io
 
 [Discord link](https://discord.gg/Dj6usq7ww3)
 
-# installation instructions
-This plugin is distributed as a firefox plugin.
-
-Go to releases, and download the latest release (.zip)
-
-Then, go to about:debugging#/runtime/this-firefox
-
-Click on load temporary add-on
-
-Select the .zip you downloaded.
-
-Then, go to bonk.io, and you should be good to go!
-
-If you get "does not contain a valid manifest", then follow the following extra steps:
-
-Extract all of the files from the .zip, then open the extracted folder, open the folder IT contains, and select all of the files, and create a NEW .zip just containing them. Firefox can get confused by the recursive folder structure of the release.
+## Installation instructions
+### Firefox
+* Go to releases, and download the latest release (.zip)
+* Type `about:debugging#/runtime/this-firefox` to your browser's address bar
+* Click on Load Temporary Add-on
+* Select the vtol.zip
+* Go to [bonk.io](https://bonk.io), and you should be good to go!
+### Chromium
+Chromium, Chrome, Edge, Opera or any other Chromium-based browser
+* Go to releases, and download the latest release (.zip)
+* Type `chrome://extensions` to your browser's address bar
+* Enable developer mode from the top right corner of the page
+* Drag vtol.zip from a file explorer to the page
