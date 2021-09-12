@@ -4,12 +4,20 @@ function VTOLinjector(str){
 	newStr=newStr.replace('[S9L.C1E(107),S9L.W1E(1130),S9L.C1E(1131),S9L.W1E(1132),',VTOL_MODE);
 	newStr=newStr.replace('build(D2i,h2i) {var S5p=[arguments];S5p[4]=y3uu;',RENDER_JETPACK);
 	newStr=newStr.replace('P1R[43][P1R[7][551]][S9L.W1E(62)]={lobbyName:S9L.C1E(2070),gameStartName:S9L.W1E(2070),lobbyDescription:S9L.W1E(2071),tutorialTitle:S9L.C1E(2072),tutorialText:S9L.C1E(2073),forceTeams:false,forceTeamCount:null,editorCanTarget:false};', MAP_EDITOR_VTOL);
+	newStr=newStr.replace('function w8I(){', END_GAME);
 
 	if(str === newStr) throw "Injection failed!";
 
 	console.log("VTOL injector run");
 	return newStr;
 }
+
+const END_GAME=`
+function w8I() {
+	if(j0V[94]["hostID"] == j0V[94]["getLSID"]()) {
+		j0V[94]["sendReturnToLobby"]();
+	}
+`;
 
 const RENDER_JETPACK=`
 build(e8m,T8m) {
