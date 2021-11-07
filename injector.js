@@ -1,27 +1,26 @@
 function VTOLinjector(str){
 	newStr = str;
 	newStr=newStr.replace('"v"){;}',VTOL);
-	newStr=newStr.replace('[S9L.C1E(107),S9L.W1E(1130),S9L.C1E(1131),S9L.W1E(1132),',VTOL_MODE);
-	newStr=newStr.replace('build(D2i,h2i) {var S5p=[arguments];S5p[4]=y3uu;',RENDER_JETPACK);
+	newStr=newStr.replace('S9L.W1E(116)];',VTOL_MODE);
+	newStr=newStr.replace('build(D2i,h2i) {let S5p=[arguments];S5p[4]=y3uu;',RENDER_JETPACK);
 	newStr=newStr.replace('P1R[43][P1R[7][551]][S9L.W1E(62)]={lobbyName:S9L.C1E(2070),gameStartName:S9L.W1E(2070),lobbyDescription:S9L.W1E(2071),tutorialTitle:S9L.C1E(2072),tutorialText:S9L.C1E(2073),forceTeams:false,forceTeamCount:null,editorCanTarget:false};', MAP_EDITOR_VTOL);
 	newStr=newStr.replace('function w8I(){', END_GAME);
 
 	if(str === newStr) throw "Injection failed!";
-
 	console.log("VTOL injector run");
 	return newStr;
 }
 
-const END_GAME=`
+END_GAME=`
 function w8I() {
 	if(j0V[94]["hostID"] == j0V[94]["getLSID"]()) {
 		j0V[94]["sendReturnToLobby"]();
 	}
 `;
 
-const RENDER_JETPACK=`
+RENDER_JETPACK=`
 build(e8m,T8m) {
-	var S5p=[arguments];
+	let S5p=[arguments];
 	S5p[4]=y3uu;
 	if(this["gameSettings"]["mo"]=="v") {
 		this["VTOLWing"]=new PIXI["Graphics"]();
@@ -42,10 +41,10 @@ build(e8m,T8m) {
 		this["container"]["addChild"](this["VTOLWing"]);
 	}`;
 
-const VTOL_MODE=`[S9L.C1E(107),S9L.W1E(1130),S9L.C1E(1131),S9L.W1E(1132),"v",` //Adds VTOL to mode selection button
+VTOL_MODE=`"v",S9L.W1E(116)];` //Adds VTOL to mode selection button
 
-const VTOL=`"v") {
-	var O1B=[];
+VTOL=`"v") {
+	let O1B=[];
 	O1B[11]=(-22/30)*O7R[445];
 	O1B[791]=0.12;
 	O1B[874]=new P1R[2](0,O1B[11]);
@@ -98,7 +97,7 @@ const VTOL=`"v") {
 	}
 }`;
 
-const MAP_EDITOR_VTOL=`P1R[43][P1R[7][551]][S9L.W1E(62)]={lobbyName:S9L.C1E(2070),gameStartName:S9L.W1E(2070),lobbyDescription:S9L.W1E(2071),tutorialTitle:S9L.C1E(2072),tutorialText:S9L.C1E(2073),forceTeams:false,forceTeamCount:null,editorCanTarget:true};`
+MAP_EDITOR_VTOL=`P1R[43][P1R[7][551]][S9L.W1E(62)]={lobbyName:S9L.C1E(2070),gameStartName:S9L.W1E(2070),lobbyDescription:S9L.W1E(2071),tutorialTitle:S9L.C1E(2072),tutorialText:S9L.C1E(2073),forceTeams:false,forceTeamCount:null,editorCanTarget:true};`
 if(!window.bonkCodeInjectors)
 window.bonkCodeInjectors = [];
 window.bonkCodeInjectors.push(bonkCode => {
