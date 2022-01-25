@@ -1,7 +1,7 @@
 #!/bin/bash
 name="Bonk VTOL"
 sname="bonk-vtol"
-version="4.5"
+version="5.0"
 description="Brings back the legendary gamemode known as VTOL to bonk.io"
 
 tmp0=$(mktemp)
